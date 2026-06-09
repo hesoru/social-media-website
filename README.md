@@ -4,6 +4,8 @@ A mock social media website created for demonstration and production purposes.
 - Still requires photos of Renee and Darren.
 - Press the "post" button for the follower notification to pop up.
 
+https://github.com/user-attachments/assets/200b8987-a9cc-45f5-8805-f33af88b2652
+
 # Getting Started
 
 Follow these steps to run the website on your computer.
