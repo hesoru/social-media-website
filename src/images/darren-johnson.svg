@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+  <title id="title">Original illustrated portrait of Darren Johnson</title>
+  <desc id="desc">A stylized original vector portrait of a man with short hair and a green jacket on a soft green background.</desc>
+  <rect width="800" height="800" rx="96" fill="#ecfdf5"/>
+  <circle cx="400" cy="330" r="220" fill="#bbf7d0"/>
+  <path d="M224 730c26-128 102-204 176-204s150 76 176 204H224z" fill="#22c55e"/>
+  <path d="M300 308c0-88 44-150 100-150s100 62 100 150c0 100-44 166-100 166s-100-66-100-166z" fill="#b77952"/>
+  <path d="M286 290c8-96 58-150 122-150 70 0 116 58 116 150-54-8-106-28-154-60-20 26-48 46-84 60z" fill="#111827"/>
+  <circle cx="360" cy="342" r="10" fill="#111827"/>
+  <circle cx="440" cy="342" r="10" fill="#111827"/>
+  <path d="M362 414c24 18 52 18 76 0" fill="none" stroke="#7c2d12" stroke-width="10" stroke-linecap="round"/>
+  <path d="M314 548h172l48 182H266l48-182z" fill="#16a34a"/>
+  <path d="M352 548l48 72 48-72" fill="#dcfce7"/>
+  <circle cx="292" cy="422" r="32" fill="#b77952"/>
+  <circle cx="508" cy="422" r="32" fill="#b77952"/>
+</svg>

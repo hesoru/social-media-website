@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
+  <title id="title">Original picnic family illustration for Darren Johnson</title>
+  <desc id="desc">A warm original vector illustration of a man and his family having a picnic outdoors.</desc>
+  <rect width="1000" height="700" rx="56" fill="#fef3c7"/>
+  <circle cx="835" cy="120" r="76" fill="#facc15"/>
+  <rect y="430" width="1000" height="270" fill="#86efac"/>
+  <path d="M0 450c150-70 306-54 462-24s318-42 538 6v268H0V450z" fill="#bbf7d0"/>
+  <rect x="285" y="510" width="430" height="126" rx="20" fill="#ef4444"/>
+  <path d="M285 552h430M330 510v126M390 510v126M450 510v126M510 510v126M570 510v126M630 510v126" stroke="#fee2e2" stroke-width="8"/>
+  <circle cx="420" cy="280" r="58" fill="#b77952"/>
+  <path d="M362 270c8-62 42-96 70-96 42 0 72 36 74 96-44-6-78-20-108-44-8 18-20 34-36 44z" fill="#111827"/>
+  <rect x="360" y="336" width="122" height="154" rx="44" fill="#22c55e"/>
+  <circle cx="575" cy="300" r="54" fill="#f2c6a0"/>
+  <path d="M522 292c8-58 38-90 66-90 40 0 68 34 70 90-40-4-74-18-102-44-8 18-20 34-34 44z" fill="#78350f"/>
+  <rect x="516" y="354" width="120" height="148" rx="42" fill="#6366f1"/>
+  <circle cx="320" cy="372" r="40" fill="#8d5524"/>
+  <path d="M282 366c6-44 28-68 48-68 30 0 50 24 52 68-30-4-56-14-76-32-6 14-14 24-24 32z" fill="#1f2937"/>
+  <rect x="274" y="418" width="92" height="98" rx="34" fill="#f97316"/>
+  <circle cx="688" cy="376" r="38" fill="#f2c6a0"/>
+  <path d="M652 370c6-42 28-66 46-66 28 0 48 24 50 66-30-4-54-14-74-32-6 14-12 24-22 32z" fill="#92400e"/>
+  <rect x="646" y="420" width="86" height="96" rx="32" fill="#06b6d4"/>
+  <circle cx="400" cy="300" r="7" fill="#111827"/><circle cx="438" cy="300" r="7" fill="#111827"/>
+  <path d="M400 326c16 10 32 10 48 0" fill="none" stroke="#7c2d12" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="556" cy="318" r="7" fill="#111827"/><circle cx="594" cy="318" r="7" fill="#111827"/>
+  <path d="M556 344c14 10 30 10 44 0" fill="none" stroke="#9f1239" stroke-width="6" stroke-linecap="round"/>
+</svg>

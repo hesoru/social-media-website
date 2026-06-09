@@ -1,0 +1,552 @@
+:root {
+  color: #0f1419;
+  background: #ffffff;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.appShell {
+  display: grid;
+  grid-template-columns: 260px minmax(420px, 640px) 360px;
+  gap: 24px;
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 18px 10px;
+  border-right: 1px solid #eff3f4;
+}
+
+.brand {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 0 14px 10px;
+  border-radius: 14px;
+  background: #6366f1;
+  color: white;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  padding: 13px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #0f1419;
+  font-size: 20px;
+  text-align: left;
+}
+
+.navItem:hover,
+.navItem.active {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.postButton,
+.smallPost {
+  border: 0;
+  border-radius: 14px;
+  background: #6366f1;
+  color: white;
+  font-weight: 800;
+}
+
+.postButton {
+  width: calc(100% - 20px);
+  margin: 20px 10px;
+  padding: 16px;
+  font-size: 18px;
+}
+
+.contentFeed {
+  min-height: 100vh;
+  border-left: 1px solid #eff3f4;
+  border-right: 1px solid #eff3f4;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 14px 20px;
+  border-bottom: 1px solid #eff3f4;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.topbar span,
+.muted,
+.profileMeta,
+.postCard header span,
+.card span,
+.card small,
+.follow span {
+  color: #536471;
+}
+
+.tabs {
+  display: grid;
+  grid-auto-flow: column;
+  border-bottom: 1px solid #eff3f4;
+}
+
+.tabs button {
+  position: relative;
+  padding: 16px 10px;
+  border: 0;
+  background: transparent;
+  font-weight: 700;
+  color: #536471;
+}
+
+.tabs .selected {
+  color: #0f1419;
+}
+
+.tabs .selected::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 64px;
+  height: 4px;
+  border-radius: 999px;
+  background: #6366f1;
+  transform: translateX(-50%);
+}
+
+.composer,
+.postCard {
+  display: flex;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eff3f4;
+}
+
+.avatar {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #6366f1;
+  color: white;
+  font-weight: 900;
+}
+
+.profileLinkAvatar,
+.profileLink {
+  border: 0;
+}
+
+.profileLinkAvatar:hover,
+.profileLink:hover {
+  opacity: 0.82;
+}
+
+.profileLink {
+  padding: 0;
+  background: transparent;
+  color: #0f1419;
+}
+
+.profileLink:hover {
+  text-decoration: underline;
+}
+
+.primary,
+.profileAvatar {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.composerBody,
+.postContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.composer textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: none;
+  border: 0;
+  outline: 0;
+  font-size: 20px;
+}
+
+.composerActions,
+.postCard footer,
+.profileMeta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.composerActions {
+  justify-content: space-between;
+  border-top: 1px solid #eff3f4;
+  padding-top: 12px;
+}
+
+.composerActions button:not(.smallPost) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 0;
+  background: transparent;
+  color: #4f46e5;
+  font-weight: 700;
+}
+
+.smallPost {
+  padding: 10px 22px;
+}
+
+.postCard header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.postCard header button {
+  border: 0;
+  background: transparent;
+  color: #536471;
+}
+
+.postCard header button:last-child {
+  margin-left: auto;
+}
+
+.postCard p {
+  margin: 6px 0 12px;
+  line-height: 1.45;
+}
+
+.postPhoto {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.postCard footer {
+  justify-content: space-between;
+  color: #536471;
+}
+
+.postCard footer span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mediaGallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 16px;
+}
+
+.mediaTile {
+  overflow: hidden;
+  border: 1px solid #eff3f4;
+  border-radius: 18px;
+  background: white;
+}
+
+.mediaTile img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.mediaTile p,
+.emptyState {
+  margin: 0;
+  color: #536471;
+}
+
+.mediaTile p {
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.emptyState {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.profileHero {
+  border-bottom: 1px solid #eff3f4;
+}
+
+.cover {
+  height: 200px;
+  background: radial-gradient(circle at 20% 20%, #c4b5fd, transparent 28%), linear-gradient(135deg, #6366f1, #7c3aed);
+}
+
+.profileDetails {
+  padding: 0 20px 18px;
+}
+
+.profileAvatar {
+  width: 132px;
+  height: 132px;
+  margin-top: -66px;
+  border: 5px solid white;
+  font-size: 38px;
+}
+
+.profileDetails button {
+  float: right;
+  margin-top: 14px;
+  padding: 10px 18px;
+  border: 1px solid #cfd9de;
+  border-radius: 999px;
+  background: white;
+  font-weight: 800;
+}
+
+.profileDetails h2 {
+  margin: 12px 0 0;
+  font-size: 26px;
+}
+
+.stats {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  color: #536471;
+}
+
+.stats strong {
+  color: #0f1419;
+}
+
+.blockedCard {
+  margin-top: 20px;
+  padding: 22px;
+  border: 1px solid #cfd9de;
+  border-radius: 20px;
+  background: #f7f9f9;
+}
+
+.blockedCard h3 {
+  margin: 0 0 8px;
+}
+
+.blockedCard p {
+  margin: 0;
+  color: #536471;
+}
+
+.notificationStack {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.topNotification {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  z-index: 20;
+  width: min(420px, calc(100% - 32px));
+  transform: translateX(-50%);
+}
+
+.notificationToast {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #cfd9de;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 18px 45px rgba(15, 20, 25, 0.12);
+  animation: popIn 180ms ease-out;
+}
+
+.notificationToast svg {
+  flex: 0 0 auto;
+  color: #6366f1;
+}
+
+.notificationToast h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+}
+
+.notificationToast p {
+  margin: 0;
+  color: #536471;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rightPanel {
+  padding: 14px 0;
+}
+
+.searchBox,
+.card {
+  border-radius: 24px;
+  background: #f7f9f9;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  color: #536471;
+}
+
+.card {
+  margin-top: 16px;
+  padding: 18px;
+}
+
+.card h2 {
+  margin: 0 0 14px;
+  font-size: 21px;
+}
+
+.card > div {
+  display: grid;
+  gap: 4px;
+  padding: 12px 0;
+}
+
+.follow {
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.follow p {
+  display: grid;
+  margin: 0;
+}
+
+.follow button {
+  border: 0;
+  border-radius: 999px;
+  background: #0f1419;
+  color: white;
+  padding: 8px 14px;
+  font-weight: 800;
+}
+
+.mini {
+  width: 40px;
+  height: 40px;
+  background: #f97316;
+}
+
+.green {
+  background: #22c55e;
+}
+
+@media (max-width: 1050px) {
+  .appShell {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .rightPanel,
+  .navItem span {
+    display: none;
+  }
+
+  .sidebar {
+    padding-inline: 8px;
+  }
+}
+
+@media (max-width: 640px) {
+  .appShell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 5;
+    display: flex;
+    height: auto;
+    padding: 8px;
+    border-top: 1px solid #eff3f4;
+    border-right: 0;
+    background: white;
+  }
+
+  .brand,
+  .postButton {
+    display: none;
+  }
+
+  .sidebar nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .navItem {
+    justify-content: center;
+    width: auto;
+  }
+
+  .contentFeed {
+    border-inline: 0;
+    padding-bottom: 72px;
+  }
+}

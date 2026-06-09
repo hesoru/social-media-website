@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
+  <title id="title">Original family photo illustration for Darren Johnson</title>
+  <desc id="desc">A warm original vector illustration of a man with his family standing together in a park.</desc>
+  <rect width="1000" height="700" rx="56" fill="#dcfce7"/>
+  <rect y="438" width="1000" height="262" fill="#86efac"/>
+  <circle cx="780" cy="130" r="72" fill="#fde68a"/>
+  <path d="M0 424c132-64 260-74 384-30s226 48 342 12 206-20 274 38v256H0V424z" fill="#bbf7d0"/>
+  <path d="M116 398c52-80 94-120 126-120s70 40 118 120H116z" fill="#16a34a"/>
+  <path d="M650 384c50-74 90-112 120-112s68 38 116 112H650z" fill="#15803d"/>
+  <circle cx="500" cy="264" r="70" fill="#b77952"/>
+  <path d="M430 256c8-74 46-112 78-112 48 0 82 42 84 112-52-6-96-24-132-54-10 24-20 40-30 54z" fill="#111827"/>
+  <rect x="420" y="330" width="160" height="210" rx="56" fill="#22c55e"/>
+  <path d="M450 330l50 70 50-70" fill="#dcfce7"/>
+  <circle cx="384" cy="320" r="54" fill="#8d5524"/>
+  <path d="M334 312c6-60 36-92 60-92 42 0 70 34 72 92-42-4-76-18-104-42-8 18-16 32-28 42z" fill="#1f2937"/>
+  <rect x="318" y="372" width="132" height="174" rx="48" fill="#f97316"/>
+  <circle cx="620" cy="326" r="52" fill="#f2c6a0"/>
+  <path d="M570 318c8-56 36-86 62-86 38 0 64 32 66 86-38-4-70-18-96-42-8 18-18 32-32 42z" fill="#78350f"/>
+  <rect x="558" y="378" width="124" height="168" rx="46" fill="#6366f1"/>
+  <circle cx="502" cy="286" r="8" fill="#111827"/>
+  <circle cx="548" cy="286" r="8" fill="#111827"/>
+  <path d="M500 314c18 12 36 12 54 0" fill="none" stroke="#7c2d12" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="370" cy="338" r="7" fill="#111827"/>
+  <circle cx="410" cy="338" r="7" fill="#111827"/>
+  <path d="M368 364c16 10 32 10 48 0" fill="none" stroke="#7c2d12" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="604" cy="342" r="7" fill="#111827"/>
+  <circle cx="642" cy="342" r="7" fill="#111827"/>
+  <path d="M604 368c14 10 30 10 44 0" fill="none" stroke="#9f1239" stroke-width="6" stroke-linecap="round"/>
+</svg>
