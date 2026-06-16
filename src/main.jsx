@@ -127,7 +127,7 @@ const posts = [
   {
     id: 3,
     author: 'Darren Johnson',
-    handle: 'darren_johnson',
+    handle: 'd_johnson',
     avatar: 'DJ',
     time: '1h',
     content: 'Movie night at my place later. Snacks are covered, but someone please bring extra blankets.',
@@ -141,7 +141,7 @@ const posts = [
   {
     id: 17,
     author: 'Darren Johnson',
-    handle: 'darren_johnson',
+    handle: 'd_johnson',
     avatar: 'DJ',
     time: '90m',
     content: 'Spent the afternoon at the park with the family. Somehow the kids had endless energy and I needed a nap by minute twelve.',
@@ -155,7 +155,7 @@ const posts = [
   {
     id: 18,
     author: 'Darren Johnson',
-    handle: 'darren_johnson',
+    handle: 'd_johnson',
     avatar: 'DJ',
     time: '3h',
     content: 'Family picnic today. I packed snacks for four people and somehow everyone still wanted the exact same sandwich.',
@@ -169,7 +169,7 @@ const posts = [
   {
     id: 19,
     author: 'Darren Johnson',
-    handle: 'darren_johnson',
+    handle: 'd_johnson',
     avatar: 'DJ',
     time: '5h',
     content: 'Cooking with the family means one person stirs, two people taste-test, and I pretend that counts as teamwork.',
@@ -301,7 +301,7 @@ function Composer({ onPostClick }) {
         <textarea placeholder="Share something with your community..." />
         <div className="composerActions">
           <button><Image size={20} /> Media</button>
-          <button><Users size={20} /> Everyone can respond</button>
+          <button><Users size={20} /> Everyone</button>
           <button className="smallPost" onClick={onPostClick}>Post</button>
         </div>
       </div>
@@ -413,7 +413,7 @@ function ProfilePage() {
 
 function DarrenProfilePage() {
   const [selectedTab, setSelectedTab] = useState('updates');
-  const userPosts = posts.filter((post) => post.handle === 'darren_johnson');
+  const userPosts = posts.filter((post) => post.handle === 'd_johnson');
   const mediaPosts = userPosts.filter((post) => post.image);
 
   return (
@@ -425,7 +425,7 @@ function DarrenProfilePage() {
           <div className="avatar profileAvatar" style={{ background: '#22c55e' }}>DJ</div>
           <button>Connect</button>
           <h2>Darren Johnson</h2>
-          <p className="muted">@darren_johnson</p>
+          <p className="muted">@d_johnson</p>
           <p>Always looking for good food, good music, and a reason to get friends together.</p>
           <div className="profileMeta"><span><CalendarDays size={18} /> Joined March 2025</span></div>
           <div className="stats"><strong>312</strong> Connections <strong>2,104</strong> Subscribers</div>
@@ -508,7 +508,7 @@ function App() {
   };
 
   const openProfile = (handle) => {
-    if (handle === 'darren_johnson') {
+    if (handle === 'd_johnson') {
       setPage('darren');
       return;
     }
