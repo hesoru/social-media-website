@@ -1,26 +1,89 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Bell, CalendarDays, Heart, Home, Image, Mail, MessageCircle, MoreHorizontal, Repeat2, Search, Share, User, Users } from 'lucide-react';
-import darrenFamily from './images/darren-family.svg';
 import darrenFamilyKitchen from './images/darren-family-kitchen.svg';
-import darrenFamilyPicnic from './images/darren-family-picnic.svg';
-import darrenSelfie from './images/darren-johnson.svg';
+import darrenProfile from './images/darren-profile.JPEG';
+import darren1 from './images/darren-1.JPG';
+import darren2 from './images/darren-2.JPEG';
+import darren3 from './images/darren-3.JPG';
 import reneeSelfie from './images/renee-carter.svg';
 import './styles.css';
 
 const posts = [
   {
-    id: 1,
-    author: 'Renee Carter',
-    handle: 'renee_carter',
-    avatar: 'RC',
-    time: '12m',
-    content: 'Tried a new coffee shop this morning. Paid seven dollars to learn I still prefer the coffee I make half-asleep at home.',
-    image: reneeSelfie,
-    imageAlt: 'Illustrated selfie of Renee Carter',
-    replies: 1,
-    reposts: 0,
-    likes: 6,
+    id: 34,
+    author: 'Sofia Reyes',
+    handle: 'sofia_reyes',
+    avatar: 'SR',
+    time: '4m',
+    content: 'Woke up early on purpose and now I do not know who I am, but the sunrise was genuinely worth it.',
+    image: 'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Sunrise over rolling hills',
+    replies: 5,
+    reposts: 4,
+    likes: 61,
+    accent: '#f59e0b'
+  },
+  {
+    id: 35,
+    author: 'Amara Okafor',
+    handle: 'amara_okafor',
+    avatar: 'AO',
+    time: '8m',
+    content: 'Reorganized my entire bookshelf by color. Can I find anything now? No. Does it look incredible? Absolutely.',
+    replies: 3,
+    reposts: 1,
+    likes: 38,
+    accent: '#ec4899'
+  },
+  {
+    id: 36,
+    author: 'Jonas Berg',
+    handle: 'jonas_berg',
+    avatar: 'JB',
+    time: '15m',
+    content: 'Attempted a five-ingredient recipe and somehow used every dish in the apartment. Cooking is a scam.',
+    replies: 7,
+    reposts: 2,
+    likes: 54,
+    accent: '#0ea5e9'
+  },
+  {
+    id: 37,
+    author: 'Mei Lin',
+    handle: 'mei_lin',
+    avatar: 'ML',
+    time: '22m',
+    content: 'Took the scenic route to work and arrived twenty minutes late but emotionally restored. Fair trade.',
+    replies: 4,
+    reposts: 6,
+    likes: 79,
+    accent: '#14b8a6'
+  },
+  {
+    id: 7,
+    author: 'Maya Singh',
+    handle: 'maya_singh',
+    avatar: 'MS',
+    time: '2h',
+    content: 'Bought a plant because the apartment needed life. Now I have a leafy roommate with very unclear expectations.',
+    replies: 3,
+    reposts: 5,
+    likes: 42,
+    accent: '#14b8a6'
+  },
+  {
+    id: 33,
+    author: 'Ravi Desai',
+    handle: 'ravi_desai',
+    avatar: 'RD',
+    time: '1d',
+    content: 'Went hiking for the first time in years and remembered how small my inbox actually is.',
+    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A starry night sky over mountains',
+    replies: 8,
+    reposts: 12,
+    likes: 194,
     accent: '#6366f1'
   },
   {
@@ -36,6 +99,18 @@ const posts = [
     accent: '#6366f1'
   },
   {
+    id: 8,
+    author: 'Elena Brooks',
+    handle: 'elena_brooks',
+    avatar: 'EB',
+    time: '3h',
+    content: 'Found twenty dollars in an old jacket pocket. I will now be accepting interviews about my financial comeback.',
+    replies: 6,
+    reposts: 2,
+    likes: 67,
+    accent: '#f97316'
+  },
+  {
     id: 5,
     author: 'Renee Carter',
     handle: 'renee_carter',
@@ -46,6 +121,20 @@ const posts = [
     reposts: 1,
     likes: 5,
     accent: '#6366f1'
+  },
+  {
+    id: 30,
+    author: 'Yuki Tanaka',
+    handle: 'yuki_tanaka',
+    avatar: 'YT',
+    time: '21h',
+    content: 'Made ramen from scratch tonight. Four hours of work, gone in six minutes. Worth every second.',
+    image: 'https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A steaming bowl of ramen',
+    replies: 11,
+    reposts: 9,
+    likes: 168,
+    accent: '#f43f5e'
   },
   {
     id: 6,
@@ -60,6 +149,18 @@ const posts = [
     accent: '#6366f1'
   },
   {
+    id: 10,
+    author: 'Nora Patel',
+    handle: 'nora_patel',
+    avatar: 'NP',
+    time: '5h',
+    content: 'Cleaned one drawer and immediately considered myself a minimalist. Growth looks different for everyone.',
+    replies: 2,
+    reposts: 1,
+    likes: 29,
+    accent: '#ec4899'
+  },
+  {
     id: 13,
     author: 'Renee Carter',
     handle: 'renee_carter',
@@ -72,165 +173,57 @@ const posts = [
     accent: '#6366f1'
   },
   {
-    id: 14,
-    author: 'Renee Carter',
-    handle: 'renee_carter',
-    avatar: 'RC',
-    time: '4h',
-    content: 'Bought one candle and suddenly my apartment has a whole personality. Interior design is apparently just scented wax.',
-    image: reneeSelfie,
-    imageAlt: 'Illustrated selfie of Renee Carter',
-    replies: 0,
-    reposts: 1,
-    likes: 5,
-    accent: '#6366f1'
-  },
-  {
-    id: 15,
-    author: 'Renee Carter',
-    handle: 'renee_carter',
-    avatar: 'RC',
-    time: '6h',
-    content: 'Meal prepped for the week, which means I have created five identical future disappointments.',
-    replies: 1,
-    reposts: 0,
-    likes: 6,
-    accent: '#6366f1'
-  },
-  {
-    id: 16,
-    author: 'Renee Carter',
-    handle: 'renee_carter',
-    avatar: 'RC',
-    time: '7h',
-    content: 'Folded a blanket and called it resetting the living room. Standards are important, especially low ones.',
-    replies: 0,
-    reposts: 0,
-    likes: 3,
-    accent: '#6366f1'
-  },
-  {
-    id: 2,
-    author: 'DO NOT INTERACT',
-    handle: '',
-    profileKey: 'blocked',
-    avatar: '',
-    time: '35m',
-    content: 'The farmers market had the best strawberries today. Bought one basket and already wish I got two.',
-    image: 'https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Fresh strawberries at a market',
-    replies: 12,
-    reposts: 48,
-    likes: 319,
-    accent: '#9ca3af'
-  },
-  {
-    id: 3,
-    author: 'Darren Johnson',
-    handle: 'd_johnson',
-    avatar: 'DJ',
-    time: '1h',
-    content: 'Movie night at my place later. Snacks are covered, but someone please bring extra blankets.',
-    image: darrenSelfie,
-    imageAlt: 'Illustrated selfie of Darren Johnson',
-    replies: 8,
-    reposts: 31,
-    likes: 204,
-    accent: '#22c55e'
-  },
-  {
-    id: 17,
-    author: 'Darren Johnson',
-    handle: 'd_johnson',
-    avatar: 'DJ',
-    time: '90m',
-    content: 'Spent the afternoon at the park with the family. Somehow the kids had endless energy and I needed a nap by minute twelve.',
-    image: darrenFamily,
-    imageAlt: 'Illustrated family photo of Darren Johnson with his family',
-    replies: 5,
-    reposts: 7,
-    likes: 96,
-    accent: '#22c55e'
-  },
-  {
-    id: 18,
-    author: 'Darren Johnson',
-    handle: 'd_johnson',
-    avatar: 'DJ',
-    time: '3h',
-    content: 'Family picnic today. I packed snacks for four people and somehow everyone still wanted the exact same sandwich.',
-    image: darrenFamilyPicnic,
-    imageAlt: 'Illustrated family picnic photo of Darren Johnson with his family',
-    replies: 4,
-    reposts: 6,
-    likes: 84,
-    accent: '#22c55e'
-  },
-  {
-    id: 19,
-    author: 'Darren Johnson',
-    handle: 'd_johnson',
-    avatar: 'DJ',
-    time: '5h',
-    content: 'Cooking with the family means one person stirs, two people taste-test, and I pretend that counts as teamwork.',
-    image: darrenFamilyKitchen,
-    imageAlt: 'Illustrated kitchen photo of Darren Johnson cooking with his family',
-    replies: 7,
-    reposts: 8,
-    likes: 112,
-    accent: '#22c55e'
-  },
-  {
-    id: 7,
-    author: 'Maya Singh',
-    handle: 'maya_singh',
-    avatar: 'MS',
-    time: '2h',
-    content: 'Bought a plant because the apartment needed life. Now I have a leafy roommate with very unclear expectations.',
-    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Small houseplants on a bright windowsill',
-    replies: 3,
-    reposts: 5,
-    likes: 42,
-    accent: '#14b8a6'
-  },
-  {
-    id: 8,
-    author: 'Elena Brooks',
-    handle: 'elena_brooks',
-    avatar: 'EB',
-    time: '3h',
-    content: 'Found twenty dollars in an old jacket pocket. I will now be accepting interviews about my financial comeback.',
-    replies: 6,
-    reposts: 2,
-    likes: 67,
-    accent: '#f97316'
-  },
-  {
-    id: 9,
-    author: 'Marcus Lee',
-    handle: 'marcus_lee',
-    avatar: 'ML',
-    time: '4h',
-    content: 'Took the long way home and accidentally discovered a bakery I absolutely did not need to know about.',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
-    imageAlt: 'Fresh bread and pastries in a bakery',
-    replies: 4,
-    reposts: 9,
-    likes: 88,
-    accent: '#eab308'
-  },
-  {
-    id: 10,
-    author: 'Nora Patel',
-    handle: 'nora_patel',
-    avatar: 'NP',
-    time: '5h',
-    content: 'Cleaned one drawer and immediately considered myself a minimalist. Growth looks different for everyone.',
-    replies: 2,
-    reposts: 1,
-    likes: 29,
-    accent: '#ec4899'
+    id: 22,
+    author: 'Grace Kim',
+    handle: 'grace_kim',
+    avatar: 'GK',
+    time: '11h',
+    content: 'The sunset tonight looked photoshopped. I took forty pictures and none of them do it justice.',
+    image: 'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A vivid orange sunset over the horizon',
+    replies: 9,
+    reposts: 18,
+    likes: 201,
+    accent: '#f43f5e',
+    thread: [
+      {
+        id: 'g1',
+        author: 'Priya Nair',
+        handle: 'priya_nair',
+        avatar: 'PN',
+        time: '10h',
+        content: 'Okay this is unreal. The colors look painted on.',
+        accent: '#d946ef'
+      },
+      {
+        id: 'g2',
+        author: 'Owen Bennett',
+        handle: 'owen_bennett',
+        avatar: 'OB',
+        time: '10h',
+        content: 'Post the other thirty-nine, I need them all.',
+        accent: '#f59e0b'
+      },
+      {
+        id: 'g3',
+        author: 'DO NOT INTERACT',
+        handle: 'd_johnson',
+        profileKey: 'blocked',
+        avatar: '',
+        time: '9h',
+        content: 'Nights like this are why I always keep my camera on me.',
+        accent: '#9ca3af'
+      },
+      {
+        id: 'g4',
+        author: 'Hana Suzuki',
+        handle: 'hana_suzuki',
+        avatar: 'HS',
+        time: '9h',
+        content: 'I was watching the same sunset from across the street. You are in a few of my pictures too.',
+        accent: '#a855f7'
+      }
+    ]
   },
   {
     id: 11,
@@ -247,6 +240,20 @@ const posts = [
     accent: '#06b6d4'
   },
   {
+    id: 14,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '4h',
+    content: 'Bought one candle and suddenly my apartment has a whole personality. Interior design is apparently just scented wax.',
+    image: reneeSelfie,
+    imageAlt: 'Illustrated selfie of Renee Carter',
+    replies: 0,
+    reposts: 1,
+    likes: 5,
+    accent: '#6366f1'
+  },
+  {
     id: 12,
     author: 'Lena Morris',
     handle: 'lena_morris',
@@ -257,6 +264,278 @@ const posts = [
     reposts: 3,
     likes: 35,
     accent: '#8b5cf6'
+  },
+  {
+    id: 1,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '12m',
+    content: 'Tried a new coffee shop this morning. Paid seven dollars to learn I still prefer the coffee I make half-asleep at home.',
+    image: reneeSelfie,
+    imageAlt: 'Illustrated selfie of Renee Carter',
+    replies: 4,
+    reposts: 0,
+    likes: 6,
+    accent: '#6366f1',
+    thread: [
+      {
+        id: 'r1',
+        author: 'Maya Singh',
+        handle: 'maya_singh',
+        avatar: 'MS',
+        time: '9m',
+        content: 'Which one? I have been meaning to find a new morning spot.',
+        accent: '#14b8a6'
+      },
+      {
+        id: 'r2',
+        author: 'Marcus Lee',
+        handle: 'marcus_lee',
+        avatar: 'ML',
+        time: '7m',
+        content: 'Seven dollars is highway robbery. Home coffee supremacy, always.',
+        accent: '#eab308'
+      },
+      {
+        id: 'r3',
+        author: 'DO NOT INTERACT',
+        handle: 'd_johnson',
+        profileKey: 'blocked',
+        avatar: '',
+        time: '5m',
+        content: 'I was two tables behind you the whole time.',
+        accent: '#9ca3af'
+      },
+      {
+        id: 'r4',
+        author: 'Elena Brooks',
+        handle: 'elena_brooks',
+        avatar: 'EB',
+        time: '3m',
+        content: 'Nothing beats the coffee you make at home in your pajamas.',
+        accent: '#f97316'
+      }
+    ]
+  },
+  {
+    id: 20,
+    author: 'Priya Nair',
+    handle: 'priya_nair',
+    avatar: 'PN',
+    time: '9h',
+    content: 'Started a book club with myself. Attendance is perfect and the snacks are unbelievable.',
+    replies: 3,
+    reposts: 2,
+    likes: 47,
+    accent: '#d946ef'
+  },
+  {
+    id: 15,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '6h',
+    content: 'Meal prepped for the week, which means I have created five identical future disappointments.',
+    replies: 1,
+    reposts: 0,
+    likes: 6,
+    accent: '#6366f1'
+  },
+  {
+    id: 21,
+    author: 'Theo Walsh',
+    handle: 'theo_walsh',
+    avatar: 'TW',
+    time: '10h',
+    content: 'Tried to fix a squeaky door for five minutes and accidentally reorganized the entire garage.',
+    replies: 6,
+    reposts: 4,
+    likes: 73,
+    accent: '#0ea5e9'
+  },
+  {
+    id: 16,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '7h',
+    content: 'Folded a blanket and called it resetting the living room. Standards are important, especially low ones.',
+    replies: 0,
+    reposts: 0,
+    likes: 3,
+    accent: '#6366f1'
+  },
+  {
+    id: 23,
+    author: 'Owen Bennett',
+    handle: 'owen_bennett',
+    avatar: 'OB',
+    time: '12h',
+    content: 'Learned to make cold brew at home. I am now insufferable about coffee and have never been happier.',
+    replies: 5,
+    reposts: 7,
+    likes: 91,
+    accent: '#f59e0b'
+  },
+  {
+    id: 18,
+    author: 'Darren Johnson',
+    handle: 'd_johnson',
+    avatar: 'DJ',
+    time: '3h',
+    content: 'Caught up with an old friend today. Two coffees turned into three hours of catching up and I regret absolutely none of it.',
+    image: darren3,
+    imageAlt: 'Photo of Darren Johnson hanging out with a friend',
+    avatarImage: darrenProfile,
+    replies: 4,
+    reposts: 6,
+    likes: 84,
+    accent: '#22c55e'
+  },
+  {
+    id: 24,
+    author: 'Isabella Rossi',
+    handle: 'bella_rossi',
+    avatar: 'IR',
+    time: '13h',
+    content: 'Repotted all my herbs today. The basil looks thrilled, the mint is plotting world domination as usual.',
+    image: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Fresh herbs growing in small pots',
+    replies: 4,
+    reposts: 3,
+    likes: 62,
+    accent: '#10b981'
+  },
+  {
+    id: 25,
+    author: 'Jamal Carter',
+    handle: 'jamal_carter',
+    avatar: 'JC',
+    time: '14h',
+    content: 'Went for a morning run and my playlist carried me the entire way. Zero athletic ability, one incredible soundtrack.',
+    replies: 8,
+    reposts: 5,
+    likes: 118,
+    accent: '#3b82f6'
+  },
+  {
+    id: 26,
+    author: 'Hana Suzuki',
+    handle: 'hana_suzuki',
+    avatar: 'HS',
+    time: '16h',
+    content: 'Rainy day, big cup of coffee, and a stack of unread books. This is the entire personality I am committing to today.',
+    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A warm cup of coffee on a rainy day',
+    replies: 7,
+    reposts: 10,
+    likes: 143,
+    accent: '#a855f7'
+  },
+  {
+    id: 27,
+    author: 'Diego Alvarez',
+    handle: 'diego_alvarez',
+    avatar: 'DA',
+    time: '18h',
+    content: 'Finally beat my brother at chess after two years. I have decided to retire immediately and preserve the legacy.',
+    replies: 12,
+    reposts: 6,
+    likes: 175,
+    accent: '#ef4444'
+  },
+  {
+    id: 28,
+    author: 'Aisha Rahman',
+    handle: 'aisha_rahman',
+    avatar: 'AR',
+    time: '19h',
+    content: 'Tried yoga for the first time and discovered muscles I did not consent to having. Namaste, I guess.',
+    replies: 5,
+    reposts: 3,
+    likes: 84,
+    accent: '#8b5cf6'
+  },
+  {
+    id: 29,
+    author: 'Leo Fontaine',
+    handle: 'leo_fontaine',
+    avatar: 'LF',
+    time: '20h',
+    content: 'Spent an hour picking a paint color and it turns out all seven whites look identical on the wall. Progress.',
+    replies: 7,
+    reposts: 4,
+    likes: 102,
+    accent: '#0ea5e9'
+  },
+  {
+    id: 17,
+    author: 'Darren Johnson',
+    handle: 'd_johnson',
+    avatar: 'DJ',
+    time: '90m',
+    content: 'Took the trail after all the rain and it fought back. Ankle-deep mud, one very lost shoe, and zero regrets. Best hike in ages.',
+    image: darren1,
+    imageAlt: 'Photo of Darren Johnson covered in mud after a hike',
+    avatarImage: darrenProfile,
+    replies: 5,
+    reposts: 7,
+    likes: 96,
+    accent: '#22c55e'
+  },
+  {
+    id: 31,
+    author: 'Carlos Mendez',
+    handle: 'carlos_mendez',
+    avatar: 'CM',
+    time: '22h',
+    content: 'Adopted a cat this weekend. She has already claimed my chair, my keyboard, and roughly 90 percent of my attention.',
+    replies: 9,
+    reposts: 6,
+    likes: 147,
+    accent: '#22c55e'
+  },
+  {
+    id: 9,
+    author: 'Marcus Lee',
+    handle: 'marcus_lee',
+    avatar: 'ML',
+    time: '4h',
+    content: 'Took the long way home and accidentally discovered a bakery I absolutely did not need to know about.',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Fresh bread and pastries in a bakery',
+    replies: 4,
+    reposts: 9,
+    likes: 88,
+    accent: '#eab308'
+  },
+  {
+    id: 32,
+    author: 'Fiona Doyle',
+    handle: 'fiona_doyle',
+    avatar: 'FD',
+    time: '23h',
+    content: 'Started learning the guitar. My neighbors have not filed a complaint yet, so I am calling it a hit.',
+    replies: 6,
+    reposts: 2,
+    likes: 73,
+    accent: '#eab308'
+  },
+  {
+    id: 3,
+    author: 'Darren Johnson',
+    handle: 'd_johnson',
+    avatar: 'DJ',
+    time: '1h',
+    content: 'Movie night at my place later. Snacks are covered, but someone please bring extra blankets.',
+    image: darren2,
+    imageAlt: 'Photo of Darren Johnson',
+    avatarImage: darrenProfile,
+    replies: 8,
+    reposts: 31,
+    likes: 204,
+    accent: '#22c55e'
   }
 ];
 
@@ -314,7 +593,9 @@ function PostCard({ post, onProfileClick }) {
 
   return (
     <article className="postCard">
-      <button className="avatar profileLinkAvatar" style={{ background: post.accent }} onClick={() => onProfileClick(profileKey)}>{post.avatar}</button>
+      <button className="avatar profileLinkAvatar" style={{ background: post.accent }} onClick={() => onProfileClick(profileKey)}>
+        {post.avatarImage ? <img className="avatarImg" src={post.avatarImage} alt="" /> : post.avatar}
+      </button>
       <div className="postContent">
         <header>
           <button className="profileLink" onClick={() => onProfileClick(profileKey)}><strong>{post.author}</strong></button>
@@ -336,13 +617,55 @@ function PostCard({ post, onProfileClick }) {
   );
 }
 
+function ReplyCard({ reply, onProfileClick }) {
+  const profileKey = reply.profileKey || reply.handle;
+
+  return (
+    <article className="postCard replyCard">
+      <button className="avatar profileLinkAvatar" style={{ background: reply.accent }} onClick={() => onProfileClick(profileKey)}>{reply.avatar}</button>
+      <div className="postContent">
+        <header>
+          <button className="profileLink" onClick={() => onProfileClick(profileKey)}><strong>{reply.author}</strong></button>
+          {reply.handle && <span>@{reply.handle}</span>}
+          {reply.handle && <span>·</span>}
+          <span>{reply.time}</span>
+        </header>
+        <p>{reply.content}</p>
+      </div>
+    </article>
+  );
+}
+
 function FeedPage({ onProfileClick, onPostClick }) {
+  const feedPosts = posts.filter((post) => post.handle !== 'd_johnson' && post.profileKey !== 'blocked' && !post.thread);
+
   return (
     <main className="contentFeed">
       <div className="topbar"><h1>Home</h1></div>
       <div className="tabs"><button className="selected">Featured</button><button>Latest</button></div>
       <Composer onPostClick={onPostClick} />
-      {posts.map((post) => <PostCard key={post.id} post={post} onProfileClick={onProfileClick} />)}
+      {feedPosts.map((post) => <PostCard key={post.id} post={post} onProfileClick={onProfileClick} />)}
+    </main>
+  );
+}
+
+function ExplorePage({ onProfileClick }) {
+  return (
+    <main className="contentFeed">
+      <div className="topbar"><h1>Explore</h1></div>
+      <div className="tabs"><button className="selected">For you</button><button>Trending</button></div>
+      {posts.map((post) => (
+        <React.Fragment key={post.id}>
+          <PostCard post={post} onProfileClick={onProfileClick} />
+          {post.thread && (
+            <div className="replyThread">
+              {post.thread.map((reply) => (
+                <ReplyCard key={reply.id} reply={reply} onProfileClick={onProfileClick} />
+              ))}
+            </div>
+          )}
+        </React.Fragment>
+      ))}
     </main>
   );
 }
@@ -413,7 +736,7 @@ function ProfilePage() {
 
 function DarrenProfilePage() {
   const [selectedTab, setSelectedTab] = useState('updates');
-  const userPosts = posts.filter((post) => post.handle === 'd_johnson');
+  const userPosts = posts.filter((post) => post.handle === 'd_johnson' && post.profileKey !== 'blocked');
   const mediaPosts = userPosts.filter((post) => post.image);
 
   return (
@@ -422,7 +745,7 @@ function DarrenProfilePage() {
       <section className="profileHero">
         <div className="cover"></div>
         <div className="profileDetails">
-          <div className="avatar profileAvatar" style={{ background: '#22c55e' }}>DJ</div>
+          <img className="avatar profileAvatar profilePhoto" src={darrenProfile} alt="Darren Johnson profile photo" />
           <button>Connect</button>
           <h2>Darren Johnson</h2>
           <p className="muted">@d_johnson</p>
@@ -448,6 +771,7 @@ function BlockedProfilePage() {
         <div className="profileDetails">
           <div className="avatar profileAvatar" style={{ background: '#9ca3af' }}>DN</div>
           <h2>DO NOT INTERACT</h2>
+          <p className="muted">@d_johnson</p>
           <div className="blockedCard">
             <h3>You are blocked</h3>
             <p>You cannot connect with or view this account's updates.</p>
@@ -537,6 +861,10 @@ function App() {
 
     if (page === 'notifications') {
       return <NotificationsPage />;
+    }
+
+    if (page === 'search') {
+      return <ExplorePage onProfileClick={openProfile} />;
     }
 
     return <FeedPage onProfileClick={openProfile} onPostClick={showPostNotification} />;
