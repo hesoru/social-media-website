@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Bell, CalendarDays, Heart, Home, Image, Mail, MessageCircle, MoreHorizontal, Repeat2, Search, Share, User, Users } from 'lucide-react';
 import darrenFamilyKitchen from './images/darren-family-kitchen.svg';
@@ -6,7 +6,6 @@ import darrenProfile from './images/darren-profile.JPEG';
 import darren1 from './images/darren-1.JPG';
 import darren2 from './images/darren-2.JPEG';
 import darren3 from './images/darren-3.JPG';
-import reneeSelfie from './images/renee-carter.svg';
 import './styles.css';
 
 const posts = [
@@ -246,8 +245,8 @@ const posts = [
     avatar: 'RC',
     time: '4h',
     content: 'Bought one candle and suddenly my apartment has a whole personality. Interior design is apparently just scented wax.',
-    image: reneeSelfie,
-    imageAlt: 'Illustrated selfie of Renee Carter',
+    image: 'https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A lit scented candle on a table',
     replies: 0,
     reposts: 1,
     likes: 5,
@@ -272,8 +271,8 @@ const posts = [
     avatar: 'RC',
     time: '12m',
     content: 'Tried a new coffee shop this morning. Paid seven dollars to learn I still prefer the coffee I make half-asleep at home.',
-    image: reneeSelfie,
-    imageAlt: 'Illustrated selfie of Renee Carter',
+    image: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A cup of coffee on a cafe table',
     replies: 4,
     reposts: 0,
     likes: 6,
@@ -536,8 +535,316 @@ const posts = [
     reposts: 31,
     likes: 204,
     accent: '#22c55e'
+  },
+  {
+    id: 38,
+    author: 'Noah Kim',
+    handle: 'noah_kim',
+    avatar: 'NK',
+    time: '1d',
+    content: 'Finally cleaned out my inbox. Zero unread emails. I feel like a completely different, slightly smug person.',
+    replies: 6,
+    reposts: 3,
+    likes: 88,
+    accent: '#3b82f6'
+  },
+  {
+    id: 39,
+    author: 'Zara Ahmed',
+    handle: 'zara_ahmed',
+    avatar: 'ZA',
+    time: '1d',
+    content: 'Baked bread for the first time and it actually rose. I am now legally required to tell everyone I meet.',
+    replies: 9,
+    reposts: 7,
+    likes: 132,
+    accent: '#f97316'
+  },
+  {
+    id: 40,
+    author: 'Marco Bianchi',
+    handle: 'marco_bianchi',
+    avatar: 'MB',
+    time: '1d',
+    content: 'Went for a bike ride with no destination and somehow ended up forty kilometers from home. Great ride, terrible planning.',
+    replies: 5,
+    reposts: 4,
+    likes: 97,
+    accent: '#06b6d4'
+  },
+  {
+    id: 41,
+    author: 'Chloe Dubois',
+    handle: 'chloe_dubois',
+    avatar: 'CD',
+    time: '2d',
+    content: 'Picked fresh flowers just for myself and the whole apartment feels like it got a personality upgrade.',
+    image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A field of flowers',
+    replies: 4,
+    reposts: 2,
+    likes: 76,
+    accent: '#ec4899'
+  },
+  {
+    id: 42,
+    author: 'Ibrahim Hassan',
+    handle: 'ibrahim_hassan',
+    avatar: 'IH',
+    time: '2d',
+    content: 'Tried to meditate for ten minutes and spent nine of them planning dinner. Progress is not linear.',
+    replies: 7,
+    reposts: 3,
+    likes: 84,
+    accent: '#8b5cf6'
+  },
+  {
+    id: 43,
+    author: 'Freya Larsen',
+    handle: 'freya_larsen',
+    avatar: 'FL',
+    time: '2d',
+    content: 'Swam in the ocean before breakfast. Freezing, salty, and somehow the best decision I have made all month.',
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A calm turquoise ocean beach',
+    replies: 8,
+    reposts: 9,
+    likes: 158,
+    accent: '#0ea5e9'
+  },
+  {
+    id: 44,
+    author: 'Tom Becker',
+    handle: 'tom_becker',
+    avatar: 'TB',
+    time: '3d',
+    content: 'Assembled furniture with only one leftover screw. I am choosing to believe it was a spare and not structural.',
+    replies: 11,
+    reposts: 5,
+    likes: 121,
+    accent: '#eab308'
+  },
+  {
+    id: 45,
+    author: 'Aria Nakamura',
+    handle: 'aria_nakamura',
+    avatar: 'AN',
+    time: '3d',
+    content: 'Repainted an old chair instead of buying a new one. Nine hours of work to save forty dollars, and I regret nothing.',
+    replies: 6,
+    reposts: 4,
+    likes: 103,
+    accent: '#d946ef'
+  },
+  {
+    id: 46,
+    author: 'Samuel Osei',
+    handle: 'samuel_osei',
+    avatar: 'SO',
+    time: '4d',
+    content: 'Started a garden on my tiny balcony. Two tomatoes so far, both fiercely defended from a very determined pigeon.',
+    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A small balcony garden with plants',
+    replies: 10,
+    reposts: 6,
+    likes: 139,
+    accent: '#22c55e'
+  },
+  {
+    id: 47,
+    author: 'Lucia Romano',
+    handle: 'lucia_romano',
+    avatar: 'LR',
+    time: '4d',
+    content: 'Learned three chords on the ukulele and now every gathering is at risk. You have all been warned.',
+    replies: 5,
+    reposts: 3,
+    likes: 92,
+    accent: '#f43f5e'
+  },
+  {
+    id: 48,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '9h',
+    content: 'Reorganized my spice rack alphabetically. I now feel powerful and slightly unhinged.',
+    replies: 0,
+    reposts: 0,
+    likes: 7,
+    accent: '#6366f1'
+  },
+  {
+    id: 49,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '10h',
+    content: 'Went to bed early like a responsible adult and then scrolled my phone for two hours. Balance.',
+    replies: 1,
+    reposts: 0,
+    likes: 8,
+    accent: '#6366f1'
+  },
+  {
+    id: 50,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '12h',
+    content: 'Made a to-do list so satisfying I almost do not want to ruin it by actually doing the tasks.',
+    replies: 0,
+    reposts: 1,
+    likes: 5,
+    accent: '#6366f1'
+  },
+  {
+    id: 51,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '14h',
+    content: 'Repotted my one surviving succulent. We are both just hanging in there, honestly.',
+    replies: 0,
+    reposts: 0,
+    likes: 6,
+    accent: '#6366f1'
+  },
+  {
+    id: 52,
+    author: 'Hannah Reed',
+    handle: 'hannah_reed',
+    avatar: 'HR',
+    time: '15h',
+    content: 'Tried journaling every morning. So far it is just three pages of me negotiating with the snooze button.',
+    replies: 4,
+    reposts: 2,
+    likes: 61,
+    accent: '#a855f7'
+  },
+  {
+    id: 53,
+    author: 'Omar Farouk',
+    handle: 'omar_farouk',
+    avatar: 'OF',
+    time: '16h',
+    content: 'Finally visited the rooftop cafe everyone raves about. The view was worth it, the prices were a personal attack.',
+    image: 'https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A cozy cafe interior',
+    replies: 6,
+    reposts: 5,
+    likes: 118,
+    accent: '#0ea5e9'
+  },
+  {
+    id: 54,
+    author: 'Elise Moreau',
+    handle: 'elise_moreau',
+    avatar: 'EM',
+    time: '18h',
+    content: 'Spent the afternoon at a secondhand bookstore and left with six books and zero self-control.',
+    replies: 5,
+    reposts: 3,
+    likes: 94,
+    accent: '#ec4899'
+  },
+  {
+    id: 55,
+    author: 'Kai Andersen',
+    handle: 'kai_andersen',
+    avatar: 'KA',
+    time: '20h',
+    content: 'Went camping and remembered that I love nature in theory and my mattress in practice.',
+    image: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'A tent under a starry sky',
+    replies: 8,
+    reposts: 6,
+    likes: 141,
+    accent: '#22c55e'
+  },
+  {
+    id: 56,
+    author: 'Nadia Petrova',
+    handle: 'nadia_petrova',
+    avatar: 'NP',
+    time: '22h',
+    content: 'Learned to make dumplings from a friend today. Mine looked abstract, but they tasted like victory.',
+    replies: 7,
+    reposts: 4,
+    likes: 126,
+    accent: '#f59e0b'
+  },
+  {
+    id: 57,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '16h',
+    content: 'Attempted to fold a fitted sheet. Filed the resulting shape under abstract art and moved on with my life.',
+    replies: 1,
+    reposts: 0,
+    likes: 9,
+    accent: '#6366f1'
+  },
+  {
+    id: 58,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '18h',
+    content: 'Bought fancy tea to feel sophisticated. It has been sitting in the cupboard while I drink the same mug of instant coffee.',
+    replies: 0,
+    reposts: 1,
+    likes: 6,
+    accent: '#6366f1'
+  },
+  {
+    id: 59,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '20h',
+    content: 'Started a puzzle three weeks ago. It now lives permanently on my table and I have accepted it as furniture.',
+    replies: 0,
+    reposts: 0,
+    likes: 4,
+    accent: '#6366f1'
+  },
+  {
+    id: 60,
+    author: 'Renee Carter',
+    handle: 'renee_carter',
+    avatar: 'RC',
+    time: '1d',
+    content: 'Went grocery shopping hungry, which is how I ended up owning four kinds of cheese and no actual meals.',
+    replies: 2,
+    reposts: 0,
+    likes: 11,
+    accent: '#6366f1'
   }
 ];
+
+function shuffleFeed(list) {
+  const shuffled = [...list];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  // prevent consecutive posts from the same author (swap posts)
+  for (let i = 1; i < shuffled.length; i++) {
+    if (shuffled[i].author !== shuffled[i - 1].author) continue;
+    const swapIndex = shuffled.findIndex((post, idx) =>
+      idx > i &&
+      post.author !== shuffled[i - 1].author &&
+      (idx + 1 >= shuffled.length || shuffled[idx + 1].author !== shuffled[i].author)
+    );
+    if (swapIndex !== -1) {
+      [shuffled[i], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[i]];
+    }
+  }
+  return shuffled;
+}
 
 const notifications = [
   { id: 1, title: 'New response', detail: 'Someone responded to your post about dinner walks.' },
@@ -637,7 +944,10 @@ function ReplyCard({ reply, onProfileClick }) {
 }
 
 function FeedPage({ onProfileClick, onPostClick }) {
-  const feedPosts = posts.filter((post) => post.handle !== 'd_johnson' && post.profileKey !== 'blocked' && !post.thread);
+  const feedPosts = useMemo(
+    () => shuffleFeed(posts).filter((post) => post.handle !== 'd_johnson' && post.profileKey !== 'blocked' && !post.thread),
+    []
+  );
 
   return (
     <main className="contentFeed">
@@ -650,11 +960,13 @@ function FeedPage({ onProfileClick, onPostClick }) {
 }
 
 function ExplorePage({ onProfileClick }) {
+  const explorePosts = useMemo(() => shuffleFeed(posts), []);
+
   return (
     <main className="contentFeed">
       <div className="topbar"><h1>Explore</h1></div>
       <div className="tabs"><button className="selected">For you</button><button>Trending</button></div>
-      {posts.map((post) => (
+      {explorePosts.map((post) => (
         <React.Fragment key={post.id}>
           <PostCard post={post} onProfileClick={onProfileClick} />
           {post.thread && (
