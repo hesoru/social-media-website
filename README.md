@@ -1,5 +1,7 @@
 # Chirp Social is [live](https://hesoru.github.io/social-media-website/)!
 
+https://github.com/user-attachments/assets/dadc60df-4cc0-458f-9c30-ad56118fc18e
+
 ## Notes:
 - Shuffle order of posts on feed via refresh, or navigating to a different page.
 - "DO NOT INTERACT" replies to several posts on the *Explore* page.
